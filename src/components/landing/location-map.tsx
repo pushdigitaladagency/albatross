@@ -122,9 +122,8 @@ export function LocationMap({ dest }: { dest: MapDest | null }) {
           zoomControl: true,
         }).setView([MAP_LAT, MAP_LNG], 14);
 
-        L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
-          attribution: "&copy; OpenStreetMap &copy; CARTO",
-          subdomains: "abcd",
+        L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution: "&copy; OpenStreetMap",
           maxZoom: 19,
           keepBuffer: 4,
         }).addTo(map);
