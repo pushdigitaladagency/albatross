@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Albatross Coimbatore | Final 5 Premium Plots | Sri Baby Properties",
+      "hasCanvas": false,
+      "bodyTextLen": 4190,
+      "bodyTextHash": "4a4ba3c0e3968c84d65b47f1a73b603099a63edf573da1d16861f05b8669eb10",
+      "bodyTextPrefix": "Skip to enquiry THE LAST 5 LOCATION BOOK A SITE VISIT FINAL RELE",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Albatross Coimbatore | Final 5 Premium Plots | Sri Baby Properties",
+      "hasCanvas": false,
+      "bodyTextLen": 4163,
+      "bodyTextHash": "e0f3a90115d704dfef2cbd87fb3e4da05d39ac3ee46dadd701bd17833bb08140",
+      "bodyTextPrefix": "Skip to enquiry BOOK VISIT FINAL RELEASE 105 plots sold. Only 5 ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

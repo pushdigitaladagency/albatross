@@ -1,0 +1,45 @@
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+
+export function distanceKm(
+  a: { lat: number; lng: number },
+  b: { lat: number; lng: number },
+) {
+  const toRad = (deg: number) => (deg * Math.PI) / 180;
+  const R = 6371;
+  const dLat = toRad(b.lat - a.lat);
+  const dLng = toRad(b.lng - a.lng);
+  const h =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(toRad(a.lat)) * Math.cos(toRad(b.lat)) * Math.sin(dLng / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
+
+export function scrollToId(id: string, offset = -12) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const lenis = window.__lenis;
+  if (lenis) {
+    lenis.scrollTo(el, { offset, duration: 1.15 });
+    return;
+  }
+  const top = el.getBoundingClientRect().top + window.scrollY + offset;
+  window.scrollTo({ top, behavior: "smooth" });
+}
+
+declare global {
+  interface Window {
+    __lenis?: {
+      scrollTo: (
+        target: HTMLElement | number | string,
+        options?: { offset?: number; duration?: number },
+      ) => void;
+      raf: (time: number) => void;
+      destroy: () => void;
+    };
+  }
+}
