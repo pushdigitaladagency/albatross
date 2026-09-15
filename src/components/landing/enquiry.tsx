@@ -126,6 +126,17 @@ export function Enquiry() {
                 Request a site visit
                 <ArrowRight className="size-4" strokeWidth={1.75} />
               </Button>
+              <p className="text-xs leading-relaxed text-muted">
+                By requesting a visit you agree to our{" "}
+                <a href="/privacy" className="text-forest underline-offset-4 hover:underline">
+                  Privacy Policy
+                </a>{" "}
+                and{" "}
+                <a href="/terms" className="text-forest underline-offset-4 hover:underline">
+                  Terms and Conditions
+                </a>
+                . We will contact you on the number you provide, including WhatsApp.
+              </p>
             </form>
           )}
         </Reveal>

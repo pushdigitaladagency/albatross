@@ -12,14 +12,25 @@ function WhatsAppIcon({ className }: { className?: string }) {
   );
 }
 
+function shouldShowBar() {
+  if (window.scrollY <= window.innerHeight * 0.7) return false;
+  const footer = document.getElementById("site-footer");
+  if (!footer) return true;
+  return footer.getBoundingClientRect().top > window.innerHeight - 16;
+}
+
 export function StickyBar() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setShow(window.scrollY > window.innerHeight * 0.7);
+    const onScroll = () => setShow(shouldShowBar());
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   if (!show) return null;

@@ -1,8 +1,9 @@
+import { Link } from "@tanstack/react-router";
 import { EMAIL, OFFICE, PHONE_DISPLAY, PHONE_TEL, SITE_OFFICE } from "@/lib/campaign";
 
 export function Footer() {
   return (
-    <footer className="bg-forest px-5 py-14 text-cream md:px-10 lg:px-14">
+    <footer id="site-footer" className="bg-forest px-5 py-14 pb-24 text-cream md:px-10 md:pb-16 lg:px-14">
       <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
         <div>
           <img
@@ -31,9 +32,16 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="mt-8 flex flex-col gap-2 border-t border-cream/15 pt-5 text-xs text-cream/75 sm:flex-row sm:justify-between">
+      <div className="mt-8 flex flex-col gap-3 border-t border-cream/15 pt-5 text-xs text-cream/75">
         <p>© {new Date().getFullYear()} Sri Baby Property Developers Private Limited.</p>
-        <p>105 sold · 5 remaining · Albatross, Coimbatore</p>
+        <nav className="flex flex-wrap gap-x-6 gap-y-2" aria-label="Legal">
+          <Link to="/privacy" className="hover:text-gold">
+            Privacy Policy
+          </Link>
+          <Link to="/terms" className="hover:text-gold">
+            Terms and Conditions
+          </Link>
+        </nav>
       </div>
     </footer>
   );
